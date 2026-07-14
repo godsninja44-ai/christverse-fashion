@@ -1,0 +1,12 @@
+# Netlify config — deploys the static client. Host the server separately
+# (Render/Railway/Fly) and set VITE_API_URL to its origin at build time.
+
+[build]
+  base = "client"
+  command = "npm install && npm run build"
+  publish = "dist"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
