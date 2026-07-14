@@ -17,7 +17,9 @@ publish, managed Postgres, HTTPS, no config. This is the reference deployment.
 
 `vercel.json` in the repo root builds `client/` as a static site.
 
-- Client: import the GitHub repo in Vercel, framework = Vite, root = `client/`.
+- Client: import the GitHub repo in Vercel keeping the repo root as the project
+  root — the included `vercel.json` handles the build (`cd client && npm install
+  && npm run build`, output `client/dist`) and SPA rewrites.
 - Server: host on Render/Railway/Fly (see below), then set the Vercel env
   `VITE_API_URL=https://<your-api-host>` and redeploy.
 - SPA fallback rewrites are included so deep links like `/shop/2` work.

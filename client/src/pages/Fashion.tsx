@@ -1,3 +1,4 @@
+import { assetUrl } from "@/lib/assets";
 import { useState } from "react";
 import { Link, useLocation } from "wouter";
 import { Filter, Shirt, Sparkles } from "lucide-react";
@@ -83,7 +84,7 @@ export default function Fashion() {
                 <div className="relative aspect-[4/5] overflow-hidden rounded-2xl bg-secondary mb-4 border border-border/40 group-hover:border-primary/50 transition-colors">
                   {item.imageUrl ? (
                     <img 
-                      src={item.imageUrl} 
+                      src={assetUrl(item.imageUrl)} 
                       alt={item.name} 
                       className="object-cover w-full h-full transition-transform duration-700 group-hover:scale-105"
                     />

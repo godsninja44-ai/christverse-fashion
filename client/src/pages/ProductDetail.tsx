@@ -1,3 +1,4 @@
+import { assetUrl } from "@/lib/assets";
 import { useState } from "react";
 import { useParams, Link } from "wouter";
 import { format } from "date-fns";
@@ -61,7 +62,7 @@ export default function ProductDetail() {
         <div className="relative aspect-square rounded-3xl overflow-hidden bg-secondary border border-border/50 shadow-lg flex-1">
           {item.imageUrl ? (
             <img
-              src={item.imageUrl}
+              src={assetUrl(item.imageUrl)}
               alt={item.name}
               className="object-cover w-full h-full"
             />
